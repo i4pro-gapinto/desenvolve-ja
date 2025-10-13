@@ -99,21 +99,6 @@ Observações:
 
 - Pelo frontend: selecione um ou mais arquivos `.sql` contendo `CREATE TABLE`, marque as opções desejadas e clique em "Gerar Scripts". Depois use o botão "Baixar todos (.zip)" para baixar o ZIP com os artefatos.
 
-- Pela linha de comando (exemplo usando curl - PowerShell):
-
-```powershell
-$headers = @{
-  "Accept" = "application/json"
-}
-curl -X POST "http://localhost:3001/generate?json=1" -H "Accept: application/json" -F "options={\"consulta\":true,\"insert_update\":true,\"delete\":true,\"layout_importacao\":true}" -F "files=@C:\path\to\valid_table.sql"
-```
-
-- Baixar ZIP direto (sem JSON):
-
-```powershell
-curl -X POST "http://localhost:3001/generate" -F "options={\"consulta\":true}" -F "files=@C:\path\to\valid_table.sql" --output generated.zip
-```
-
 ## Exemplo de templates
 
 Os templates estão em `api/examples/`. Eles contêm placeholders (ex.: `--NOME_TABELA--`, `--COLUNAS--`) que o `scriptGenerator` substitui com os metadados extraídos pelo `parser`.
@@ -149,12 +134,5 @@ Adapte esses templates para corresponder ao padrão de templates da sua empresa.
 ## Contato / autoria
 
 Projeto inicial e manutenção por i4pro-gapinto.
-
----
-
-Se quiser, eu posso agora:
-- remover totalmente o fluxo de envio por texto do frontend (limpar `createTable`),
-- estender o script de testes em `test_scripts/` para baixar e validar o ZIP automaticamente,
-- ou adicionar um README em inglês também.
-
 Diga qual dos itens prefere que eu faça em seguida e eu executo.
+
