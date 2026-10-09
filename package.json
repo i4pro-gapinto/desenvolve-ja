@@ -1,0 +1,13 @@
+{
+  "name": "desenvolve-ja-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd api && node index.js",
+    "client": "cd app && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,6 @@
+# Layout Importação
+
+Este arquivo é gerado automaticamente e contém os campos da tabela (exceto PK) para importação de dados.
+
+Colunas:
+- Campo: nome do campo
